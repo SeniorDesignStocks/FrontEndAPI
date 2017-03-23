@@ -1,0 +1,25 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "description": "Personal API",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src",
+    "start:tunnel": "cross-env TUNNEL=true node ./src"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "clear": "^0.0.1",
+    "cors": "^2.8.1",
+    "cross-env": "^3.2.4",
+    "express": "^4.15.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.9.0",
+    "morgan": "^1.8.1",
+    "ngrok": "^2.2.6",
+    "node-emoji": "^1.5.1",
+    "node-fetch": "^1.6.3",
+    "yahoo-finance": "^0.2.16"
+  }
+}
