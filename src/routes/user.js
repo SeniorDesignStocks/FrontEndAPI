@@ -34,7 +34,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/register', (req, res) => {
-  const { 
+  const {
     username,
     password,
     email,
@@ -52,8 +52,7 @@ router.get('/register', (req, res) => {
     favorites: [],
   });
 
-
-  newUser.save((err) => {
+  newUser.save((err, user) => {
     if (err) {
       console.log(`${emoji.get('poop')}  Failed to add new user: { username: ${username}, email: ${email} }`);
 

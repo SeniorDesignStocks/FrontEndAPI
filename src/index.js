@@ -2,7 +2,7 @@ const express = require('express');
 const emoji = require('node-emoji');
 const chalk = require('chalk');
 
-const config = require('./config');
+const config = require('./config/global.json');
 const print = require('./print');
 
 const app = express();
@@ -34,7 +34,7 @@ if (process.env.TUNNEL) {
   const ngrok = require('ngrok');
   ngrok.connect(port, (err, url) => {
     if (err) {
-      return console.error(err); 
+      return console.error(err);
     }
 
     print.section([

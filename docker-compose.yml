@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  # creating the express api
+  stocks-api:
+    build:
+      context: .
+      dockerfile: node.dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - stocksapp-network
+
+  # creating the mongo database
+  stocks-database:
+    image: mongo
+    networks:
+      - stocksapp-network
+
+networks:
+  stocksapp-network:
+    driver: bridge
