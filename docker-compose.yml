@@ -6,7 +6,12 @@ services:
   stocks-api:
     build:
       context: .
-      dockerfile: node.dockerfile
+      dockerfile: ./docker/node.dockerfile
+    volumes:
+      - .:/var/www/stocks-api
+    working_dir: /var/www/stocks-api
+    env_file:
+      - ./docker/env/app.${APP_ENV}.env
     ports:
       - "8080:8080"
     networks:

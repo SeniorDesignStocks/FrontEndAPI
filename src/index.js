@@ -7,9 +7,6 @@ const print = require('./print');
 
 const app = express();
 
-// clearing the terminal
-require('clear')();
-
 // adding middleware
 const morgan = require('morgan');
 const cors = require('cors');
