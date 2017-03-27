@@ -2,6 +2,18 @@ version: '2'
 
 services:
 
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./docker/nginx.${APP_ENV}.dockerfile
+    links:
+      - stocks-api:stocks-api
+    ports:
+      - "80:80"
+    networks:
+      - stocks-network
+
   # creating the express api
   stocks-api:
     build:
@@ -15,14 +27,14 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - stocksapp-network
+      - stocks-network
 
   # creating the mongo database
   stocks-database:
     image: mongo
     networks:
-      - stocksapp-network
+      - stocks-network
 
 networks:
-  stocksapp-network:
+  stocks-network:
     driver: bridge
