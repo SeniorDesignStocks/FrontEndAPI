@@ -6,7 +6,11 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src",
-    "start:tunnel": "cross-env TUNNEL=true node ./src"
+    "start:tunnel": "cross-env TUNNEL=true node ./src",
+    "dev": "cross-env APP_ENV=development",
+    "docker:build": "npm run dev docker-compose build",
+    "docker": "npm run dev docker-compose up",
+    "docker": "npm run dev docker-compose down"
   },
   "dependencies": {
     "chalk": "^1.1.3",
